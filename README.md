@@ -1,4 +1,4 @@
-# Soil Moisture Model in Matlab
+# Soil Moisture Model in Python
 Soil water balance model for estimating soil moisture
 
 "SM_Model_IE.py": Soil Moisture Model
@@ -6,4 +6,4 @@ Soil water balance model for estimating soil moisture
 "Figure.png": Figure with the model results
 "Xopt.txt": Optimal set of parameter values for the selected data in the example
 
-(a Matlab version is also available: [https://github.com/lucabrocca78/Soil-Moisture-Model-Python](https://github.com/lucabrocca78/Soil-Moisture-Model-Matlab))
+(a Matlab version is also available: https://github.com/lucabrocca78/Soil-Moisture-Model-Matlab)
