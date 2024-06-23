@@ -28,9 +28,10 @@ Brocca, L., Melone, F., Moramarco, T. (2008). On the estimation of antecedent we
 Brocca, L., Camici, S., Melone, F., Moramarco, T., Martinez-Fernandez, J., Didon-Lescot, J.-F., Morbidelli, R. (2014). Improving the representation of soil moisture by using a semi-analytical infiltration model. Hydrological Processes, 28(4), 2103-2115, doi:10.1002/hyp.9766. http://dx.doi.org/10.1002/hyp.9766
 
 ------
-# python code: 
+# Running the Python code: 
 
 Requirements
+
 Ensure you have the following Python packages installed:
 •	numpy
 •	pandas
@@ -38,6 +39,7 @@ Ensure you have the following Python packages installed:
 •	datetime
 
 You can install them using pip if not already installed:
+
 pip install numpy pandas matplotlib
 
 # Running the Code
@@ -46,19 +48,25 @@ pip install numpy pandas matplotlib
 
 example:
 PTSM = np.loadtxt("path/to/data.txt")
+
 PAR = np.loadtxt("path/to/Xopt.txt")
+
 namefig = 'path/to/figure.png'
 
 3.	Run the script: Execute the script from your terminal or command prompt:
+
 python SM_Model_IE.py
+
 4.	Output: After running the script, Figure.png will be generated in the specified directory. This file contains the graphical results of the soil moisture model.
 
 # Code Overview
 Functions
 1.	matlab2PythonDates(dateMatlab):
 o	Converts MATLAB date numbers to Python datetime objects.
+
 2.	kling_gupta_efficiency(sim, obs):
 o	Calculates the Kling-Gupta Efficiency (KGE) between simulated and observed data.
+
 3.	SMestim_IE_02(PTSM, PAR, FIG, namefig):
 o	Main function to estimate soil moisture.
 o	Inputs:
@@ -66,9 +74,11 @@ o	Inputs:
 	PAR: Array of model parameters.
 	FIG: Indicator for plotting results.
 	namefig: Path for saving the output figure.
-o	Outputs:
+
+4.	Outputs:
 	WW: Simulated soil moisture.
 	NS: Nash-Sutcliffe efficiency.
 	KGE: Kling-Gupta Efficiency.
+
 5.	plot_results(D, WW, WWobs, PIO, NS, NS_lnQ, NS_radQ, RQ, RMSE, KGE, namefig): Plots and saves the model results.
 
