@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+import matplotlib.dates as mdates
 
 def matlab2PythonDates(dateMatlab):
     days = dateMatlab % 1
@@ -101,17 +102,18 @@ def plot_results(D, WW, WWobs, PIO, NS, NS_lnQ, NS_radQ, RQ, RMSE, KGE, namefig)
     ax2.grid(True)
     ax2.set_xlim([D_dates[0], D_dates[-1]])
     ax2.set_ylim([0, 1.05 * np.nanmax(PIO[np.isfinite(PIO)])])
-    ax2.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: pd.to_datetime(x).strftime('%Y-%m-%d')))
-
+    ax2.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+    ax2.xaxis.set_major_locator(mdates.AutoDateLocator(maxticks=10))
+    
     plt.savefig(namefig, format='png', dpi=150)
     plt.show()
 
 
 
-PTSM = np.loadtxt("C:/Users/h.mosaffa/Desktop/SSMODEL/data.txt")
-PAR = np.loadtxt("C:/Users/h.mosaffa/Desktop/SSMODEL/Xopt.txt")
+PTSM = np.loadtxt("path/to/data.txt")
+PAR = np.loadtxt("path/to/Xopt.txt")
 FIG = 1
-namefig = 'C:/Users/h.mosaffa/Desktop/SSMODEL/figure.png'
+namefig = 'path/to/figure.png'
 
 WW, NS, KGE = SMestim_IE_02(PTSM, PAR, FIG, namefig)
 
